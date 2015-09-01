@@ -1,2 +1,2 @@
 # DBUploadTools
-This repository contains additional files and tools which are helpful/necessary for uploading JEC to the CMS conditions database(s). These tools are meant to augment those already contained within the JetMETCorrections/Modules package.
+This repository contains additional files and tools which are helpful/necessary for uploading JEC to the CMS conditions database(s). These tools are meant to augment those already contained within the JetMETCorrections/Modules sub-package. In some cases these are new tools not included in JetMETCorrections/Modules and in some cases these are modified tools that already exist in that sub-package.
