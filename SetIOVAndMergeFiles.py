@@ -25,11 +25,11 @@ for k, v in algsizetype.iteritems():
 
 iov_list = [
 	("1","252999","Summer15_50nsV5_DATA"),
-	("253000","254832","Summer15_25nsV2_DATA"),
+	("253000","254832","Summer15_25nsV5_DATA"),
 	("254833","254833","Summer15_50nsV5_DATA"),
-	("254834","254980","Summer15_25nsV2_DATA"),
+	("254834","254980","Summer15_25nsV5_DATA"),
 	("254981","255031","Summer15_50nsV5_DATA"),
-	("255032","","Summer15_25nsV2_DATA")
+	("255032","","Summer15_25nsV5_DATA")
 ]
 
 for aa in ALGO_LIST: #loop for jet algorithms

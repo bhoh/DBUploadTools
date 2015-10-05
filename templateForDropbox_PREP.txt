@@ -3,10 +3,10 @@
     "destinationTags": {
         "TAGNAME": {
             "dependencies": {},
-            "synchronizeTo": "offline"
+            "synchronizeTo": "SYNC"
         }
     },
     "inputTag":	"PRODNAME",
-    "since": null,
+    "since": SINCE,
     "userText": ""
 }
