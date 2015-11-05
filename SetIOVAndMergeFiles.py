@@ -23,13 +23,16 @@ for k, v in algsizetype.iteritems():
         for j in jettype:
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
+db_50ns = "Summer15_50nsV5_DATA"
+db_25ns = "Summer15_25nsV6_DATA"
+
 iov_list = [
-	("1","252999","Summer15_50nsV5_DATA"),
-	("253000","254832","Summer15_25nsV5_DATA"),
-	("254833","254833","Summer15_50nsV5_DATA"),
-	("254834","254980","Summer15_25nsV5_DATA"),
-	("254981","255031","Summer15_50nsV5_DATA"),
-	("255032","","Summer15_25nsV5_DATA")
+	("1", "252999",      db_50ns),
+	("253000", "254832", db_25ns),
+	("254833", "254833", db_50ns),
+	("254834", "254980", db_25ns),
+	("254981", "255031", db_50ns),
+	("255032", "",       db_25ns)
 ]
 
 for aa in ALGO_LIST: #loop for jet algorithms
