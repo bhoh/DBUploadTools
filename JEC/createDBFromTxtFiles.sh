@@ -1,7 +1,7 @@
 #! /bin/sh
 
 ERA=$1
-DIR=$PWD/../JECDatabase/textFiles/$ERA
+DIR=$PWD/../../JECDatabase/textFiles/$ERA
 
 if [ $# -ne 1 ]; then
     echo "Usage: ./createDBFromTxtFiles.sh ERA"
@@ -13,16 +13,16 @@ if [ ! -d "$DIR" ]; then
     exit 1
 fi
 
-if [ -d "data" ]; then
+if [ -d "../data" ]; then
     echo "Error: 'data' folder already exist. Please remove it before launching this script"
     exit 1
 fi
 
 # Copy folder
-cp -r "$DIR" data
+cp -r "$DIR" ../data
 
 # Delete symlinks
-./removeSymlinks.sh data
+../removeSymlinks.sh ../data
 
 # Create database
 LOG=`mktemp`
