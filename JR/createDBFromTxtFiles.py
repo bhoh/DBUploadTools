@@ -45,7 +45,7 @@ for k, v in algsizetype.iteritems():
 
 output_db_file = '%s.db' % ERA
 
-JER_SUFFIXES = ['DATAMCSF', 'MC_PtResolution']
+JER_SUFFIXES = ['DATAMCSF', 'MC_PtResolution', 'MC_PhiResolution']
 
 import FWCore.ParameterSet.Config as cms 
 process = cms.Process('jecdb') 
@@ -71,7 +71,7 @@ for algo in ALGO_LIST:
 
         process.PoolDBOutputService.toPut += [cms.PSet(
                 record = cms.string('%s_%s' % (suffix, algo)), 
-                tag    = cms.string('JER_%s_%s_%s' % (suffix, ERA, algo)), 
+                tag    = cms.string('JR_%s_%s_%s' % (suffix, ERA, algo)), 
                 label  = cms.string(algo)
                 )]
 

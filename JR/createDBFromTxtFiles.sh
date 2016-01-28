@@ -1,7 +1,7 @@
 #! /bin/sh
 
 ERA=$1
-DIR=$PWD/../../JERDatabase/textFiles/$ERA
+DIR=$PWD/../../JRDatabase/textFiles/$ERA
 
 if [ $# -ne 1 ]; then
     echo "Usage: ./createDBFromTxtFiles.sh ERA"
@@ -25,8 +25,6 @@ cp -r "$DIR" ../data
 ../removeSymlinks.sh ../data
 
 # Create database
-LOG=`mktemp`
-echo $LOG
 #cmsRun createDBFromTxtFiles.py era=$ERA path=JetMETCorrections/DBUploadTools/data/ &> "$LOG"
 cmsRun createDBFromTxtFiles.py era=$ERA path=JetMETCorrections/DBUploadTools/data/
 
