@@ -1,0 +1,12 @@
+{
+    "destinationDatabase": "DEST_DATABASE",
+    "destinationTags": {
+        "DEST_TAG": {
+            "dependencies": {},
+            "synchronizeTo": "any"
+        }
+    },
+    "inputTag":	"INPUT_TAG",
+    "since": SINCE,
+    "userText": ""
+}
