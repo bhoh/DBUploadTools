@@ -24,7 +24,7 @@ for k, v in algsizetype.iteritems():
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
 db_50ns = "Summer15_50nsV5_DATA"
-db_25ns = "Summer15_25nsV6_DATA"
+db_25ns = "Summer15_25nsV7_DATA"
 
 iov_list = [
 	("1", "252999",      db_50ns),
