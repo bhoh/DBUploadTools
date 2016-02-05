@@ -69,7 +69,7 @@ for k, v in algsizetype.iteritems():
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 #*********************************************************************
 
-RESOLUTIONS_TYPE = ['DATAMCSF', 'MC_PtResolution', 'MC_PhiResolution']
+RESOLUTIONS_TYPE = ['SF', 'PtResolution', 'PhiResolution']
 
 files = []
 
@@ -83,7 +83,7 @@ for algo in ALGO_LIST: #  loop for jet algorithms
 
         t = template
 
-        input_tag = "JR_%s_%s_%s" % (resolution, ERA, algo)
+        input_tag = "JR_%s_%s_%s" % (ERA, resolution, algo)
         dest_tag = input_tag
         since = str(options.since) if options.since else "null"
 
