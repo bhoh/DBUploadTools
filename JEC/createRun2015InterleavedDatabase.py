@@ -3,19 +3,25 @@ import os
 import re
 import sys
 import subprocess
-from optparse import OptionParser
+import argparse
 
-parser = OptionParser()
-parser.add_option('--era', metavar='F', type='string', action='store',
-                  dest='era',
-                  help='Input era')
-(options, args) = parser.parse_args()
+parser = argparse.ArgumentParser()
+parser.add_argument('--era', metavar='F', action='store', dest='era', help='Output era', required=True)
+parser.add_argument('--50ns', metavar='DB', action='store', dest='db_50ns', help='50ns database', required=True)
+parser.add_argument('--25ns', metavar='DB', action='store', dest='db_25ns', help='25ns database', required=True)
 
+options = parser.parse_args()
+
+if not os.path.exists(options.db_50ns):
+    raise argparse.ArgumentTypeError('50ns database does not exist: %r' % options.db_50ns)
+
+if not os.path.exists(options.db_25ns):
+    raise argparse.ArgumentTypeError('25ns database does not exist: %r' % options.db_25ns)
 
 jec_type    = 'JetCorrectorParametersCollection'
 ERA         = options.era
-algsizetype = {'ak':[4,8]} #other options: ic, kt and any cone size
-jettype = ['pf','pfchs','puppi'] #other options: calo
+algsizetype = {'ak': [4,8]} #other options: ic, kt and any cone size
+jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
 
 ALGO_LIST = []
 for k, v in algsizetype.iteritems():
@@ -23,8 +29,8 @@ for k, v in algsizetype.iteritems():
         for j in jettype:
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
-db_50ns = "Summer15_50nsV5_DATA"
-db_25ns = "Summer15_25nsV7_DATA"
+db_50ns = options.db_50ns
+db_25ns = options.db_25ns
 
 iov_list = [
 	("1", "252999",      db_50ns),
@@ -36,15 +42,16 @@ iov_list = [
 ]
 
 for aa in ALGO_LIST: #loop for jet algorithms
-	for iov in iov_list:
-		s1 = jec_type + '_' + iov[2] + '_' + aa
-		s2 = jec_type + '_' + ERA + '_' + aa
-		if not iov[1]:
-			s = "conddb_import -f sqlite_file:"+iov[2]+".db -c sqlite_file:"+ERA+".db -i "+s1+" -t "+s2+" -b "+iov[0]
-		else:
-			s = "conddb_import -f sqlite_file:"+iov[2]+".db -c sqlite_file:"+ERA+".db -i "+s1+" -t "+s2+" -b "+iov[0]+" -e "+iov[1]
-		print s
-		subprocess.call(s.split())
+    for iov in iov_list:
+        input_era = os.path.splitext(os.path.basename(iov[2]))[0]
+        s1 = jec_type + '_' + input_era + '_' + aa
+        s2 = jec_type + '_' + ERA + '_' + aa
+        if not iov[1]:
+            s = "conddb_import -f sqlite_file:"+iov[2]+" -c sqlite_file:"+ERA+".db -i "+s1+" -t "+s2+" -b "+iov[0]
+        else:
+            s = "conddb_import -f sqlite_file:"+iov[2]+" -c sqlite_file:"+ERA+".db -i "+s1+" -t "+s2+" -b "+iov[0]+" -e "+iov[1]
+        print s
+        subprocess.call(s.split())
 
 
 
