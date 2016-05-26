@@ -24,7 +24,8 @@ if options.path is None:
 jec_type    = 'JetCorrectorParametersCollection'
 ERA         = options.era
 algsizetype = {'ak': [4, 8]} #other options: ic, kt and any cone size
-jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
+jettype = ['pf', 'pfchs', 'puppi', 'calo', 'jpt'] 
+#jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
 
 # Some sanity checks
 if not '25ns' in ERA and not '50ns' in ERA:
@@ -41,7 +42,8 @@ ALGO_LIST = []
 for k, v in algsizetype.iteritems():
     for s in v:
         for j in jettype:
-            ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
+            ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi").replace("CALO","Calo")))
+            #ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
 output_db_file = '%s.db' % ERA
 

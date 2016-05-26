@@ -21,13 +21,15 @@ if not os.path.exists(options.db_25ns):
 jec_type    = 'JetCorrectorParametersCollection'
 ERA         = options.era
 algsizetype = {'ak': [4,8]} #other options: ic, kt and any cone size
-jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
+jettype = ['pf', 'pfchs', 'puppi', 'calo', 'jpt']
+#jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
 
 ALGO_LIST = []
 for k, v in algsizetype.iteritems():
     for s in v:
         for j in jettype:
-            ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
+	    ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi").replace("CALO","Calo")))
+            #ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
 db_50ns = options.db_50ns
 db_25ns = options.db_25ns
