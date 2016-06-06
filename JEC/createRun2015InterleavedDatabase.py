@@ -31,6 +31,7 @@ for k, v in algsizetype.iteritems():
 	    ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi").replace("CALO","Calo")))
             #ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
+
 db_50ns = options.db_50ns
 db_25ns = options.db_25ns
 

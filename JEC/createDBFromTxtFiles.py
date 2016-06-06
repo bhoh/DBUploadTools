@@ -23,8 +23,10 @@ if options.path is None:
 
 jec_type    = 'JetCorrectorParametersCollection'
 ERA         = options.era
-algsizetype = {'ak': [4, 8]} #other options: ic, kt and any cone size
-jettype = ['pf', 'pfchs', 'puppi', 'calo', 'jpt'] 
+algsizetypeAK4 = {'ak': [4]} #other options: ic, kt and any cone size
+algsizetypeAK8 = {'ak': [8]} #other options: ic, kt and any cone size
+jettypeAK4 = ['pf', 'pfchs', 'puppi', 'calo', 'jpt'] 
+jettypeAK8 = ['pf', 'pfchs', 'puppi'] 
 #jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
 
 # Some sanity checks
@@ -39,11 +41,14 @@ if not 'data' in options.path:
 
 
 ALGO_LIST = []
-for k, v in algsizetype.iteritems():
+for k, v in algsizetypeAK4.iteritems():
     for s in v:
-        for j in jettype:
+        for j in jettypeAK4:
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi").replace("CALO","Calo")))
-            #ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
+for k, v in algsizetypeAK8.iteritems():
+    for s in v:
+        for j in jettypeAK8:
+            ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
 output_db_file = '%s.db' % ERA
 
