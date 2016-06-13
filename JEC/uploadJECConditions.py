@@ -65,10 +65,24 @@ ERA         = options.era
 algsizetype = {'ak': [4, 8]}  # other options: ic, kt and any cone size
 jettype = ['pf', 'pfchs', 'puppi']  # other options: calo
 
+algsizetypeAK4 = {'ak': [4]}
+algsizetypeAK8 = {'ak': [8]}
+jettypeAK4 = ['pf', 'pfchs', 'puppi', 'calo', 'jpt']
+jettypeAK8 = ['pf', 'pfchs', 'puppi']
+
 ALGO_LIST = []
-for k, v in algsizetype.iteritems():
+#for k, v in algsizetype.iteritems():
+#    for s in v:
+#        for j in jettype:
+#            ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
+
+for k, v in algsizetypeAK4.iteritems():
     for s in v:
-        for j in jettype:
+        for j in jettypeAK4:
+            ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi").replace("CALO","Calo")))
+for k, v in algsizetypeAK8.iteritems():
+    for s in v:
+        for j in jettypeAK8:
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
 files = []
