@@ -2,7 +2,8 @@
 
 LOG=$1
 
-CORRECTIONS="L1FastJet L2Relative L3Absolute L2L3Residual Uncertainty"
+CORRECTIONS="L1FastJet L2Relative L3Absolute Uncertainty" # For Summer16_V1_MC
+#CORRECTIONS="L1FastJet L2Relative L3Absolute L2L3Residual Uncertainty"
 
 # Log contains files like:
 #    File found: Opened file JetMETCorrections/DBUploadTools/data/Summer15_25nsV6_DATA_L3Absolute_AK4PF.txt 
