@@ -25,7 +25,9 @@ cp -r "$DIR" ../data
 ../removeSymlinks.sh ../data
 
 # Create database
-LOG=`mktemp`
+#LOG=`mktemp`
+LOG=${ERA}.log
+#cmsRun createDBFromTxtFiles.py era=$ERA path=JetMETCorrections/DBUploadTools/data/ 
 cmsRun createDBFromTxtFiles.py era=$ERA path=JetMETCorrections/DBUploadTools/data/ &> "$LOG"
 
 ./parseLog.sh "$LOG"

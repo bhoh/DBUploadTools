@@ -60,7 +60,7 @@ print template
 #******************   definitions  **********************************
 ERA         = options.era
 algsizetype = {'ak': [4, 8]}  # other options: ic, kt and any cone size
-jettype = ['pf', 'pfchs']  # other options: calo, puppi
+jettype = ['pf', 'pfchs','puppi']  # other options: calo, puppi
 
 ALGO_LIST = []
 for k, v in algsizetype.iteritems():

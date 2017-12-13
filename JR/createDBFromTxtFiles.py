@@ -26,12 +26,12 @@ if options.path is None:
 jer_type    = 'JetResolutionObject'
 ERA         = options.era
 algsizetype = {'ak': [4, 8]} #other options: ic, kt and any cone size
-#jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
-jettype = ['pf', 'pfchs'] #other options: calo
+jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
+#jettype = ['pf', 'pfchs'] #other options: calo
 
 # Some sanity checks
-if not '25ns' in ERA and not '50ns' in ERA:
-    raise Exception('Invalid era: it must contains 25ns or 50ns')
+#if not '25ns' in ERA and not '50ns' in ERA:
+#    raise Exception('Invalid era: it must contains 25ns or 50ns')
 
 if not 'data' in options.path:
     raise Exception('Invalid path: it must be a valid CMSSW data path')
