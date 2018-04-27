@@ -2,7 +2,9 @@
 
 import subprocess
 
-era = 'Summer15_V1_DATA'
+era = 'Summer16_23Sep2016AllV2_DATA'
+#era = 'Summer16_23Sep2016V2_MC'
+#era = 'Summer15_V1_DATA'
 
 iovs = [
     #'JetCorrectorParametersCollection_'+era+'_AK5Calo',
