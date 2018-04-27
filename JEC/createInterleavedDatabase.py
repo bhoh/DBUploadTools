@@ -69,7 +69,7 @@ iov_list = [
 #	("299337", "302029",       db_import) # C
 #	("302030", "303434",       db_import) # D
 #	("303435", "304826",       db_import) # E
-	("304911", "306462",       db_import) # F
+#	("304911", "306462",       db_import) # F
 # 
 # This is JEC internal definition, use this one instead of PPD definition
 # 2016 ####
@@ -77,6 +77,10 @@ iov_list = [
 #	("276831",	"278801",       db_import) # EF
 #	("278802",	"280385",      db_import)  # G
 #	("280919",	"",      db_import) # H
+# 2016 V9 ####
+#	("1", "276811",       db_import) # BCD
+#	("276831",	"278801",       db_import) # EF early F
+	("278802",	"",      db_import)  # earlyF GH
 ]
 
 for aa in ALGO_LIST_AK4_base: #loop for jet algorithms
