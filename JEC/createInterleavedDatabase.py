@@ -77,7 +77,7 @@ iov_list = [
 #	("276831",	"278801",       db_import) # EF
 #	("278802",	"280385",      db_import)  # G
 #	("280919",	"",      db_import) # H
-# 2016 V9 ####
+# 2016 V9, 10 ####
 #	("1", "276811",       db_import) # BCD
 #	("276831",	"278801",       db_import) # EF early F
 	("278802",	"",      db_import)  # earlyF GH
