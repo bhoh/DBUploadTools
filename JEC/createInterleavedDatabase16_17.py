@@ -6,7 +6,7 @@ import subprocess
 import argparse
 
 #########################################################
-# usage: python createInterleavedDatabase.py --era Summer16_03Feb2017All_V9_DATA --importDB Summer16_03Feb2017BCD_V9_DATA.db
+# usage: python createInterleavedDatabase16_17.py --era Summer16_03Feb2017All_V9_DATA --importDB Summer16_03Feb2017BCD_V9_DATA.db
 #########################################################
 
 parser = argparse.ArgumentParser()
@@ -65,11 +65,12 @@ db_import= options.db_import
 
 iov_list = [
 # 2017 ###
-#	("1", "299329",       db_import) # B
+#	("297020", "299329",       db_import) # B
 #	("299337", "302029",       db_import) # C
 #	("302030", "303434",       db_import) # D
 #	("303435", "304826",       db_import) # E
-#	("304911", "306462",       db_import) # F
+####	("304911", "306462",       db_import) # F
+	("304911", "",       db_import) # F
 # 
 # This is JEC internal definition, use this one instead of PPD definition
 # 2016 ####
@@ -78,9 +79,10 @@ iov_list = [
 #	("278802",	"280385",      db_import)  # G
 #	("280919",	"",      db_import) # H
 # 2016 V9, 10, 11 ####
-#	("1", "276811",       db_import) # BCD
+# 	("1", "276811",       db_import) # BCD
 #	("276831",	"278801",       db_import) # EF early F
-	("278802",	"",      db_import)  # earlyF GH
+#	("278802",	"297019",      db_import)  # earlyF GH use this to combine with 2017
+####	("278802",	"284044",      db_import)  # earlyF GH
 ]
 
 for aa in ALGO_LIST_AK4_base: #loop for jet algorithms

@@ -45,7 +45,7 @@ for k, v in algsizetype.iteritems():
 
 output_db_file = '%s.db' % ERA
 
-JR_SUFFIXES = ['SF', 'PtResolution', 'PhiResolution']
+JR_SUFFIXES = ['SF', 'PtResolution', 'PhiResolution', 'EtaResolution']
 
 import FWCore.ParameterSet.Config as cms 
 process = cms.Process('jecdb') 

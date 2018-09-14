@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# Usage: ./uploadJRConditions.py --db Summer15_25nsV6_MC.db --era Summer15_25nsV6_MC --production
 import os
 import re
 import sys
@@ -69,7 +70,7 @@ for k, v in algsizetype.iteritems():
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 #*********************************************************************
 
-RESOLUTIONS_TYPE = ['SF', 'PtResolution', 'PhiResolution']
+RESOLUTIONS_TYPE = ['SF', 'PtResolution', 'PhiResolution', 'EtaResolution']
 
 files = []
 
