@@ -65,12 +65,12 @@ db_import= options.db_import
 
 iov_list = [
 # 2017 ###
-#	("297020", "299329",       db_import) # B
-#	("299337", "302029",       db_import) # C
-#	("302030", "303434",       db_import) # D
-#	("303435", "304826",       db_import) # E
+# 	("297020", "299329",       db_import) # B
+# 	("299337", "302029",       db_import) # C
+# 	("302030", "303434",       db_import) # D
+# 	("303435", "304826",       db_import) # E
 ####	("304911", "306462",       db_import) # F
-	("304911", "",       db_import) # F
+ 	("304911", "",       db_import) # F
 # 
 # This is JEC internal definition, use this one instead of PPD definition
 # 2016 ####
