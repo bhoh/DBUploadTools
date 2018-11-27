@@ -26,8 +26,18 @@ ERA         = options.era
 algsizetypeAK4 = {'ak': [4]} #other options: ic, kt and any cone size
 algsizetypeAK8 = {'ak': [8]} #other options: ic, kt and any cone size
 #jettypeAK4 = ['pf', 'pfchs', 'puppi']# for Summer16_V1_MC 
+
+# Standard ########################
 jettypeAK4 = ['pf', 'pfchs', 'puppi', 'calo', 'jpt'] 
 jettypeAK8 = ['pf', 'pfchs', 'puppi'] 
+#####################################################
+
+# for Spring16_25nsFastSimV1_MC
+#jettypeAK4 = ['pf', 'pfchs'] 
+#jettypeAK8 = ['pf', 'pfchs'] 
+##################################
+
+
 #jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
 
 # Some sanity checks
