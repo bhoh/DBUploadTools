@@ -1,10 +1,14 @@
 
+#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V32_94X_DATA --importDB  Fall17_17Nov2017B_V32_94X_DATA.db
+#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V32_94X_DATA --importDB  Fall17_17Nov2017C_V32_94X_DATA.db
+#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V32_94X_DATA --importDB Fall17_17Nov2017DE_V32_94X_DATA.db
+python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V32_94X_DATA --importDB  Fall17_17Nov2017F_V32_94X_DATA.db
 
-#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_DATA --importDB Fall17_17Nov2017B_V27_DATA.db
-#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_DATA --importDB Fall17_17Nov2017C_V27_DATA.db
-#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_DATA --importDB Fall17_17Nov2017D_V27_DATA.db
-#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_DATA --importDB Fall17_17Nov2017E_V27_DATA.db
-python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_DATA --importDB Fall17_17Nov2017F_V27_DATA.db
+#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_94X_DATA --importDB Fall17_17Nov2017B_V27_DATA.db
+#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_94X_DATA --importDB Fall17_17Nov2017C_V27_DATA.db
+#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_94X_DATA --importDB Fall17_17Nov2017D_V27_DATA.db
+#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_94X_DATA --importDB Fall17_17Nov2017E_V27_DATA.db
+#python createInterleavedDatabase16_17.py --era Fall17_17Nov2017_V27_94X_DATA --importDB Fall17_17Nov2017F_V27_DATA.db
 
 
 

@@ -65,9 +65,11 @@ db_import= options.db_import
 
 iov_list = [
 # 2017 ###
+# 	("1", "299329",       db_import) # B
 # 	("297020", "299329",       db_import) # B
 # 	("299337", "302029",       db_import) # C
 # 	("302030", "303434",       db_import) # D
+# 	("302030", "304826",       db_import) # DE
 # 	("303435", "304826",       db_import) # E
 ####	("304911", "306462",       db_import) # F
  	("304911", "",       db_import) # F
