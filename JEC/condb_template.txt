@@ -8,5 +8,5 @@
     },
     "inputTag":	"INPUT_TAG",
     "since": SINCE,
-    "userText": ""
+    "userText": "a test"
 }

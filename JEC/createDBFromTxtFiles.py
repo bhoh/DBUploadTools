@@ -7,6 +7,12 @@ options.register('era',
         VarParsing.varType.string,
         'The era of the JEC (ie, Summer15_25nsV2_MC)')
 
+options.register('era2',
+        None,
+        VarParsing.multiplicity.singleton,
+        VarParsing.varType.string,
+        'to change name of era, use this')
+
 options.register('path',
         None,
         VarParsing.multiplicity.singleton,
@@ -23,6 +29,10 @@ if options.path is None:
 
 jec_type    = 'JetCorrectorParametersCollection'
 ERA         = options.era
+ERA2        = options.era2
+# change era
+# ex) Fall17_17Nov2017_V32_MC -> Fall17_17Nov2017_V32_106X_MC
+
 algsizetypeAK4 = {'ak': [4]} #other options: ic, kt and any cone size
 algsizetypeAK8 = {'ak': [8]} #other options: ic, kt and any cone size
 #jettypeAK4 = ['pf', 'pfchs', 'puppi']# for Summer16_V1_MC 
@@ -61,7 +71,10 @@ for k, v in algsizetypeAK8.iteritems():
         for j in jettypeAK8:
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
-output_db_file = '%s.db' % ERA
+if ERA2 != "":
+    output_db_file = '%s.db' % ERA2
+else:
+    output_db_file = '%s.db' % ERA
 
 import FWCore.ParameterSet.Config as cms 
 process = cms.Process('jecdb') 
@@ -80,9 +93,13 @@ process.PoolDBOutputService = cms.Service('PoolDBOutputService',
 
 sequence = cms.Sequence()
 for algo in ALGO_LIST:
+    if ERA2 != "":
+        tag_name = "_".join([jec_type, ERA2, algo])
+    else:
+        tag_name = "_".join([jec_type, ERA, algo])
     process.PoolDBOutputService.toPut += [cms.PSet(
             record = cms.string(algo), 
-            tag    = cms.string('%s_%s_%s' % (jec_type, ERA, algo)), 
+            tag    = cms.string(tag_name),
             label  = cms.string(algo)
             )]
 

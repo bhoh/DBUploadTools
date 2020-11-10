@@ -9,6 +9,12 @@ options.register('era',
         VarParsing.varType.string,
         'The era of the JER (ie, Summer15_25nsV2_MC)')
 
+options.register('era2',
+        None,
+        VarParsing.multiplicity.singleton,
+        VarParsing.varType.string,
+        'to change name of era, use this')
+
 options.register('path',
         None,
         VarParsing.multiplicity.singleton,
@@ -25,6 +31,7 @@ if options.path is None:
 
 jer_type    = 'JetResolutionObject'
 ERA         = options.era
+ERA2        = options.era2
 algsizetype = {'ak': [4, 8]} #other options: ic, kt and any cone size
 jettype = ['pf', 'pfchs', 'puppi'] #other options: calo
 #jettype = ['pf', 'pfchs'] #other options: calo
@@ -43,7 +50,10 @@ for k, v in algsizetype.iteritems():
         for j in jettype:
             ALGO_LIST.append(str(k.upper()+str(s)+j.upper().replace("CHS","chs").replace("PUPPI","PFPuppi")))
 
-output_db_file = '%s.db' % ERA
+if ERA2 != "":
+    output_db_file = '%s.db' % ERA2
+else:
+    output_db_file = '%s.db' % ERA
 
 JR_SUFFIXES = ['SF', 'PtResolution', 'PhiResolution', 'EtaResolution']
 
@@ -65,13 +75,16 @@ process.PoolDBOutputService = cms.Service('PoolDBOutputService',
 sequence = cms.Sequence()
 for algo in ALGO_LIST:
     for suffix in JR_SUFFIXES:
-
+        if ERA2 != "":
+            tag_name = "_".join(["JR", ERA2, suffix, algo])
+        else:
+            tag_name = "_".join(["JR", ERA, suffix, algo])
         jer_file = os.path.join(options.path, '%s_%s_%s.txt' % (ERA, suffix, algo))
         print "Using %r as input for database" % jer_file
 
         process.PoolDBOutputService.toPut += [cms.PSet(
                 record = cms.string('%s_%s' % (suffix, algo)), 
-                tag    = cms.string('JR_%s_%s_%s' % (ERA, suffix, algo)), 
+                tag    = cms.string(tag_name),
                 label  = cms.string(algo)
                 )]
 
