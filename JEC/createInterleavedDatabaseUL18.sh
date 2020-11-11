@@ -14,11 +14,11 @@ done
 
 
 ## combine history of tags
-#for jet_type in AK4PF AK4PFchs AK4PFPuppi AK8PF AK8PFchs AK8PFPuppi
-#do
-#  conddb --yes copy --destdb offline_data_jec.db  --to 307082 JetCorrectorParametersCollection_Sum16V11_and_UL17V5_and_Aut18V19_DATA_${jet_type} JetCorrectorParametersCollection_Run2_Combined_UL_2017_2018_DATA_${jet_type} 
-#  conddb --yes copy --destdb offline_data_jec.db --from 307083 JetCorrectorParametersCollection_Summer19UL18_V5_DATA_${jet_type} JetCorrectorParametersCollection_Run2_Combined_UL_2017_2018_DATA_${jet_type}
-#done
+for jet_type in AK4PF AK4PFchs AK4PFPuppi AK8PF AK8PFchs AK8PFPuppi
+do
+  conddb --yes copy --destdb offline_data_jec.db  --to 315251 JetCorrectorParametersCollection_Sum16V11_and_UL17V5_and_Aut18V19_DATA_${jet_type} JetCorrectorParametersCollection_Run2_Combined_UL_2017_2018_DATA_${jet_type} 
+  conddb --yes copy --destdb offline_data_jec.db --from 315252 JetCorrectorParametersCollection_Summer19UL18_V5_DATA_${jet_type} JetCorrectorParametersCollection_Run2_Combined_UL_2017_2018_DATA_${jet_type}
+done
 
 #for sf_type in SF PtResolution PhiResolution EtaResolution
 #do
