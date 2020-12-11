@@ -1,0 +1,1 @@
+python createInterleavedDatabaseUL17_18.py --era Summer19UL18_RunABCD_V5_HEMV1_DATA --importDB Summer19UL18_RunA_V5_HEMV1_DATA.db Summer19UL18_RunB_V5_HEMV1_DATA.db Summer19UL18_RunC_V5_HEMV1_DATA.db Summer19UL18_RunD_V5_HEMV1_DATA.db
